@@ -30,10 +30,29 @@
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
         alert("_"); 
-    };
-    // Inserted function to determine which key is pressed
-    var userGuess = event.key;
     
+    // Inserted function to determine which key is pressed
+    var userGuess = event.key.toLoweCase();
+
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
+    };
+    
+    // Include If Logic to determine the outcome of the Game. type out displays
+    // the if will compare user input to computer guess. add else statements
+    // to push user input into an array. and also to add losses ++ and reduce the 
+    // number of games back to zero.
+    // also add a reset function.
+    // new function resets value to # of guesses.
+    // what is reset()?
+    // designate the number of tries to 10 (or whatever number we want)
+    // check other drills and activities from today for ideas.
+
+    type code for 
+
+
 </body>
     
     

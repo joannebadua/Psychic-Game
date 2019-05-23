@@ -39,8 +39,8 @@
     document.onkeyup = function(event) {
     userText.textContent = event.key;
     
-    // Inserted function to determine which key is pressed
-    var userInput = event.key.toLoweCase();
+    // To determine which key is pressed
+    var userText = event.key.toLoweCase();
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -49,7 +49,11 @@
     };
     
     // Include If Logic to determine the outcome of the Game. type out displays
-    if (computerGuess === userInput)
+    if (computerGuess === userText) {
+      wins++;
+    } else {
+      losses++;
+    }
         document.quarySelector
         // listen to the video
     

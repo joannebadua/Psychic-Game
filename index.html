@@ -14,7 +14,7 @@
       <p id="wins-text">Wins</p>
       <p id="losses-text">Losses</p>
       <p id="chances-text">Guesses Left:</p>
-      <p id="pastguesses-text">Your Guesses so far:</p>
+      <p id="user-text">Your Guesses so far:</p>
     </div>
   
     <script type="text/javascript">
@@ -23,6 +23,7 @@
     var computerGuess = ['a', 'b', 'c', 'd', 'e', 'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     
     // Start game with a score of zero
+    var userText = document.getElementById("user-text");
     var score = 0;
     var numberOfTries = 10;
     
@@ -36,7 +37,7 @@
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
-        alert("_"); 
+    userText.textContent = event.key;
     
     // Inserted function to determine which key is pressed
     var userInput = event.key.toLoweCase();

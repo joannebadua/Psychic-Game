@@ -11,8 +11,8 @@
     <div>
       <h1>The Psychic Game</h1>
       <p id="directions-text">Guess what letter I'm thinking of</p>
-      <p id="wins-text">Wins</p>
-      <p id="losses-text">Losses</p>
+      <p id="wins-text">Wins:</p>
+      <p id="losses-text">Losses:</p>
       <p id="chancesleft-text">Guesses Left:</p>
       <p id="userchoice-text">Your Guesses so far:</p>
     </div>
@@ -43,7 +43,7 @@
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
-    userText.textContent = event.key;
+    userChoice.textContent = event.key;
     
     // To determine which key is pressed
     var userChoice = event.key.toLoweCase();
@@ -55,7 +55,7 @@
     };
     
     // Include If Logic to determine the outcome of the Game. 
-    if (computerGuess === userText) {
+    if (computerGuess === userChoice) {
       wins++;
     } else {
       losses++;
@@ -67,6 +67,8 @@
     lossesText.textContent = "losses: " + losses;
     chancesText.textContent = "Guesses left: " + GuessLeft;
     userChoiceText.textContent = "Your Guesses so far: " + userChoice;
+  }
+};
 
     // the if will compare user input to computer guess. add else statements
     // to push user input into an array. and also to add losses ++ and reduce the 
@@ -75,11 +77,9 @@
     // new function resets value to # of guesses.
     // what is reset()?
     // designate the number of tries to 10 (or whatever number we want)
-    // check other drills and activities from today for ideas.
+    // check other drills and activities from today for ideas
 
-    type code for 
-
-
+</script>
 </body>
     
     

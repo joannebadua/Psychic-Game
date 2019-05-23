@@ -40,7 +40,7 @@
     userText.textContent = event.key;
     
     // To determine which key is pressed
-    var userText = event.key.toLoweCase();
+    var userChoice = event.key.toLoweCase();
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -58,7 +58,9 @@
     // Display the wins, losses, guesses left and user's guesses
     winsText.textContent = "wins: " + wins;
     lossesText.textContent = "losses: " + losses;
-    
+    chancesText.textContent = "Guesses left: " + GuessLeft;
+    userChoiceText.textContent = "Your Guesses so far: " + userChoice;
+
     // the if will compare user input to computer guess. add else statements
     // to push user input into an array. and also to add losses ++ and reduce the 
     // number of games back to zero.

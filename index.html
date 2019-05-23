@@ -8,70 +8,85 @@
 
 <body>
 
-    <div>
-      <h1>The Psychic Game</h1>
-      <p id="directions-text">Guess what letter I'm thinking of</p>
-      <p id="wins-text">Wins:</p>
-      <p id="losses-text">Losses:</p>
-      <p id="chancesleft-text">Guesses Left:</p>
-      <p id="userchoice-text">Your Guesses so far:</p>
-    </div>
-  
-    <script type="text/javascript">
+  <div>
+    <h1>The Psychic Game</h1>
+    <p id="directions-text">Guess what letter (not numbers, not other keys) that I'm thinking of</p>
+    <p id="wins-text">Wins:</p>
+    <p id="losses-text">Losses:</p>
+    <p id="chancesleft-text">Guesses Left:</p>
+    <p id="userchoice-text">Your Guesses so far:</p>
+    <div id="computerguess-text"></div>
+  </div>
+
+  <script type="text/javascript">
 
     // Creates an array that lists out all of the options (any alpha key).
-    var computerGuess = ['a', 'b', 'c', 'd', 'e', 'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    
+    var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
     // Start game with a score of zero
     var score = 0;
-    
-    // Creating variables to hold the number of wins, losses, and ties. They start at 0.
+
+    // Creating variables to hold the number of wins, losses, and ties. They start at 0. This is Javascript
     // console.log(wins);
     var wins = 0;
     var losses = 0;
-    
-    // Create variables to hold number of chances left starting at 8.
-    var numbOfTries = 8; 
-    var chancesLeft = 8
+
+    // Create variables to hold number of chances left starting at 3
+    var chancesLeft = 3
     // ??
 
-        // Create variables that hold references to the places in the HTML where we want to display things.
+    // Create variables that hold references to the places in the HTML where we want to display things, or render on the page. This is HTML.
     var directionsText = document.getElementById("directions-text");
     var winsText = document.getElementById("wins-text");
     var lossesText = document.getElementById("losses-text");
-    var numbOfTriesText = document.getElementById("chancesleft-text");
+    var chancesText = document.getElementById("chancesleft-text");
     var userChoiceText = document.getElementById("userchoice-text");
-
-
-    // This function is run whenever the user presses a key.
-    document.onkeyup = function(event) {
-    userGuess.textContent = event.key;
-    
-    // To determine which key is pressed
-    var userGuess = event.key.toLoweCase();
+    var computerGuessText = document.getElementById("computerguess-text")
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    console.log(computerGuess)
 
-    // if (endOfTen === )
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function (event) {
 
-    
-    // Include If Logic to determine the outcome of the Game. 
-    if (userGuess === 'a', 'b', 'c', 'd', 'e', 'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z') {
-    if (computerGuess === userGuess) {
-      wins++;
-    } else {
-      losses++;
+
+      // To determine which key is pressed
+      var userGuess = event.key;
+
+
+      // if (endOfTen === )
+
+      // Include If Logic to determine the outcome of the Game. 
+      // if (userGuess === 'a' || 'b' || 'c' || 'd' || 'e' || 'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z') {
+      if (computerGuess === userGuess) {
+        wins++;
+        chancesLeft = 3;
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess);
+        
+        // need to figure out how to randomize computerGuess. THis will increase loss and lessen the tries. need to reset. 
+
+      } else {
+        chancesLeft--;
+        console.log(chancesLeft);
+
+        if (chancesLeft === 0) {
+          losses++;
+          chancesLeft = 3;
+        }
+
+
+      }
+
+      // Display the wins, losses, guesses left and user's guesses
+      directionsText.textContent = "Guess what letter I'm thinking of";
+      winsText.textContent = "wins: " + wins;
+      lossesText.textContent = "losses: " + losses;
+      chancesText.textContent = "Guesses left: " + chancesLeft;
+      userChoiceText.textContent = "Your Guesses so far: " + userGuess;
     }
-    
-    // Display the wins, losses, guesses left and user's guesses
-    directionsText.textContent = "Guess what letter I'm thinking of";
-    winsText.textContent = "wins: " + wins;
-    lossesText.textContent = "losses: " + losses;
-    chancesText.textContent = "Guesses left: " + GuessLeft;
-    userChoiceText.textContent = "Your Guesses so far: " + userGuess;
-  }
-};
+// };
 
     // the if will compare user input to computer guess. add else statements
     // to push user input into an array. and also to add losses ++ and reduce the 
@@ -82,8 +97,8 @@
     // designate the number of tries to 10 (or whatever number we want)
     // check other drills and activities from today for ideas
 
-</script>
+  </script>
 </body>
-    
-    
+
+
 </html>

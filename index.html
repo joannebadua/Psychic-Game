@@ -17,9 +17,15 @@
     </div>
   
     <script type="text/javascript">
+
     // Creates an array that lists out all of the options (any alpha key).
     var computerGuess = ['a', 'b', 'c', 'd', 'e', 'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     
+    // Start game with a score of zero
+    var score = 0;
+    var numberOfTries = 10;
+    
+
     // Creating variables to hold the number of wins, losses, and ties. They start at 0.
     console.log(wins);
     var = wins;
@@ -32,15 +38,19 @@
         alert("_"); 
     
     // Inserted function to determine which key is pressed
-    var userGuess = event.key.toLoweCase();
+    var userInput = event.key.toLoweCase();
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-
+    // if (endOfTen === )
     };
     
     // Include If Logic to determine the outcome of the Game. type out displays
+    if (computerGuess === userInput)
+        document.quarySelector
+        // listen to the video
+    
     // the if will compare user input to computer guess. add else statements
     // to push user input into an array. and also to add losses ++ and reduce the 
     // number of games back to zero.

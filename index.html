@@ -48,14 +48,16 @@
     // if (endOfTen === )
     };
     
-    // Include If Logic to determine the outcome of the Game. type out displays
+    // Include If Logic to determine the outcome of the Game. 
     if (computerGuess === userText) {
       wins++;
     } else {
       losses++;
     }
-        document.quarySelector
-        // listen to the video
+    
+    // Display the wins, losses, guesses left and user's guesses
+    winsText.textContent = "wins: " + wins;
+    lossesText.textContent = "losses: " + losses;
     
     // the if will compare user input to computer guess. add else statements
     // to push user input into an array. and also to add losses ++ and reduce the 

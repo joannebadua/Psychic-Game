@@ -8,6 +8,7 @@ var score = 0;
 var wins = 0;
 var losses = 0;
 var chancesLeft = 3;
+var pastLetters = [ ];
 
 // Create variables that hold references to the places in the HTML where we want to display things, or render on the page. 
 var directionsText = document.getElementById("directions-text");
@@ -16,6 +17,7 @@ var lossesText = document.getElementById("losses-text");
 var chancesText = document.getElementById("chancesleft-text");
 var userChoiceText = document.getElementById("userchoice-text");
 var computerGuessText = document.getElementById("computerguess-text");
+
 
 // Randomly chooses a choice from the options array. This is the Computer's guess.
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -33,10 +35,13 @@ document.onkeyup = function (event) {
         chancesLeft = 3;
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         console.log(computerGuess);
+        alert("Win! You must be the pokemaster. Psyduck has a *headache*");
 
     } else {
         chancesLeft--;
         console.log(chancesLeft);
+        pastLetters.push(" " + userGuess);
+        alert("Psy yaya! You are NOT a pokemaster");
 
         if (chancesLeft === 0) {
             losses++;
@@ -46,9 +51,9 @@ document.onkeyup = function (event) {
 
 
     // Display the wins, losses, guesses left and user's guesses
-    directionsText.textContent = "Guess what letter I'm thinking of";
+    directionsText.textContent = "Guess what letter Psyduck is thinking of";
     winsText.textContent = "wins: " + wins;
     lossesText.textContent = "losses: " + losses;
     chancesText.textContent = "Guesses left: " + chancesLeft;
-    userChoiceText.textContent = "Your Guesses so far: " + userGuess;
+    userChoiceText.textContent = "Your Guesses so far: " + pastLetters;
 }

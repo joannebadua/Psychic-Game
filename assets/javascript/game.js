@@ -7,7 +7,7 @@ var score = 0;
 // Creating variables to hold the number of wins, losses, and ties. They start at 0. This is Javascript
 var wins = 0;
 var losses = 0;
-var chancesLeft = 3;
+var chancesLeft = 10;
 var pastLetters = [ ];
 
 // Create variables that hold references to the places in the HTML where we want to display things, or render on the page. 
@@ -31,8 +31,9 @@ document.onkeyup = function (event) {
     // Include If Logic to determine the outcome of the Game. 
     if (computerGuess === userGuess) {
         wins++;
-        chancesLeft = 3;
+        chancesLeft = 10;
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        pastLetters = "";
         console.log(computerGuess);
         alert("Win! You must be the pokemaster. Psyduck has a *headache*");
 
@@ -44,7 +45,7 @@ document.onkeyup = function (event) {
 
         if (chancesLeft === 0) {
             losses++;
-            chancesLeft = 3;
+            chancesLeft = 10;
         }
     }
     // Display the wins, losses, guesses left and user's guesses

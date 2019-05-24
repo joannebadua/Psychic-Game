@@ -18,7 +18,6 @@ var chancesText = document.getElementById("chancesleft-text");
 var userChoiceText = document.getElementById("userchoice-text");
 var computerGuessText = document.getElementById("computerguess-text");
 
-
 // Randomly chooses a choice from the options array. This is the Computer's guess.
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 console.log(computerGuess)
@@ -48,8 +47,6 @@ document.onkeyup = function (event) {
             chancesLeft = 3;
         }
     }
-
-
     // Display the wins, losses, guesses left and user's guesses
     directionsText.textContent = "Guess what letter Psyduck is thinking of";
     winsText.textContent = "wins: " + wins;

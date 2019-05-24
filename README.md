@@ -4,11 +4,11 @@
 # About
 Are you the Pokemaster? 
 
-This is a fun game to guess what letter is in Psyduck's head. 
+Guess what letter is in Psyduck's head and win. 
 
 Choose wisely a letter on your keyboard, and a pop-up will alert you if you guessed correctly.
 
-You have three chances to win. If you guess correctly, you get one win. 
+You have three chances to win. If you guess correctly, you get one win. If you don't guess correctly, try again.
 
 # Technology Used:
 * [Javascript (JS)] (https://developer.mozilla.org/en-US/docs/Web/JavaScript)

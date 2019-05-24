@@ -3,13 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Psychic Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Open+Sans|Play|Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="description" content="Best Pokemon Game" />
+  <meta name="robots" content="index,follow" />
+
 </head>
 
 <body>
 
-  <div>
-    <h1>The Psychic Game</h1>
+
+<div id="main-container" class="container">
+  <section class="main-section">
+          <h1>The Psychic Game</h1>
+          <img src="assets/images/psyduck-misty.png" class="auth-image" alt="Psyduck and Misty from Pokemon">
     <p id="directions-text">Guess what letter (not numbers, not other keys) that I'm thinking of</p>
     <p id="wins-text">Wins:</p>
     <p id="losses-text">Losses:</p>
@@ -18,86 +29,7 @@
     <div id="computerguess-text"></div>
   </div>
 
-  <script type="text/javascript">
-
-    // Creates an array that lists out all of the options (any alpha key).
-    var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-    // Start game with a score of zero
-    var score = 0;
-
-    // Creating variables to hold the number of wins, losses, and ties. They start at 0. This is Javascript
-    // console.log(wins);
-    var wins = 0;
-    var losses = 0;
-
-    // Create variables to hold number of chances left starting at 3
-    var chancesLeft = 3
-    // ??
-
-    // Create variables that hold references to the places in the HTML where we want to display things, or render on the page. This is HTML.
-    var directionsText = document.getElementById("directions-text");
-    var winsText = document.getElementById("wins-text");
-    var lossesText = document.getElementById("losses-text");
-    var chancesText = document.getElementById("chancesleft-text");
-    var userChoiceText = document.getElementById("userchoice-text");
-    var computerGuessText = document.getElementById("computerguess-text")
-
-    // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    console.log(computerGuess)
-
-    // This function is run whenever the user presses a key.
-    document.onkeyup = function (event) {
-
-
-      // To determine which key is pressed
-      var userGuess = event.key;
-
-
-      // if (endOfTen === )
-
-      // Include If Logic to determine the outcome of the Game. 
-      // if (userGuess === 'a' || 'b' || 'c' || 'd' || 'e' || 'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z') {
-      if (computerGuess === userGuess) {
-        wins++;
-        chancesLeft = 3;
-        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        console.log(computerGuess);
-        
-        // need to figure out how to randomize computerGuess. THis will increase loss and lessen the tries. need to reset. 
-
-      } else {
-        chancesLeft--;
-        console.log(chancesLeft);
-
-        if (chancesLeft === 0) {
-          losses++;
-          chancesLeft = 3;
-        }
-
-
-      }
-
-      // Display the wins, losses, guesses left and user's guesses
-      directionsText.textContent = "Guess what letter I'm thinking of";
-      winsText.textContent = "wins: " + wins;
-      lossesText.textContent = "losses: " + losses;
-      chancesText.textContent = "Guesses left: " + chancesLeft;
-      userChoiceText.textContent = "Your Guesses so far: " + userGuess;
-    }
-// };
-
-    // the if will compare user input to computer guess. add else statements
-    // to push user input into an array. and also to add losses ++ and reduce the 
-    // number of games back to zero.
-    // also add a reset function.
-    // new function resets value to # of guesses.
-    // what is reset()?
-    // designate the number of tries to 10 (or whatever number we want)
-    // check other drills and activities from today for ideas
-
-  </script>
+  <script src="assets/javascript/game.js"></script>
 </body>
 
 

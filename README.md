@@ -1,4 +1,4 @@
-# Responsiveness-Portfolio
+# Psychic Game
 ![Screenshot](/assets/images/Psychic-Game-screenshot.png)
 
 # About
